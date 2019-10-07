@@ -5,7 +5,9 @@
     <color name="colorAccent">#1744C4</color>
     <color name="colorBlue">#1744C4</color>
     <color name="colorLavender">#7D45F3</color>
-    <color name="colorRed">#8A1414</color>
+    <color name="colorRed">#D13B3B</color>
     <color name="colorRedPas">#C44141</color>
-    <color name="colorText">#FFF7F7</color>
+    <color name="Text">#FFF7F7</color>
+    <color name="Black">#000000</color>
+
 </resources>
