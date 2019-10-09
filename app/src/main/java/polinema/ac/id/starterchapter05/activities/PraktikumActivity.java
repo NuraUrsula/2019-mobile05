@@ -46,19 +46,25 @@ public class PraktikumActivity extends AppCompatActivity {
     }
 
     public void handlerDips(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new DipsFragment());
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
+
+        if (fragment == null || fragment instanceof PushUpFragment || fragment instanceof HandStandFragment) {
+            getSupportFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .replace(R.id.praktikum_fragment_placeholder, new DipsFragment())
+                    .commit();
+        }
     }
 
 
     public void handlerHandstand(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new HandStandFragment());
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
+
+        if (fragment == null || fragment instanceof PushUpFragment || fragment instanceof DipsFragment) {
+            getSupportFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .replace(R.id.praktikum_fragment_placeholder, new HandStandFragment())
+                    .commit();
+        }
     }
 }
