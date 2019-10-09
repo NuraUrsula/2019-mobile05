@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import polinema.ac.id.starterchapter05.activities.DynamicActivity;
+import polinema.ac.id.starterchapter05.activities.PraktikumActivity;
 import polinema.ac.id.starterchapter05.activities.StaticActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,18 +18,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void handlerClickStaticFragment(View view) {
+    public void handlerStaticFragment(View view) {
         Intent intent = new Intent(this, StaticActivity.class);
         startActivity(intent);
     }
 
-    public void handlerClickDynamicFragment(View view) {
+    public void handlerDynamicFragment(View view) {
         Intent intent = new Intent(this, DynamicActivity.class);
         startActivity(intent);
     }
 
-    public void handlerClickPraktikumFragment(View view) {
-            Intent intent = new Intent(this, TugasActivity.class);
+    public void PraktikumFragment(View view) {
+            Intent intent = new Intent(this, PraktikumActivity.class);
             startActivity(intent);
     }
 }

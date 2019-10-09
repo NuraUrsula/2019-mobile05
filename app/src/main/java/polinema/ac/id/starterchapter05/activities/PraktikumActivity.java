@@ -30,11 +30,6 @@ public class PraktikumActivity extends AppCompatActivity {
     }
 
     public void handlerPushups(View view) {
-//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-//        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new PushUpFragment());
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
 
         if (fragment == null || fragment instanceof DipsFragment || fragment instanceof HandStandFragment) {
