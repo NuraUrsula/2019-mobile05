@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import polinema.ac.id.starterchapter05.R;
-import polinema.ac.id.starterchapter05.fragments.BlueFragment;
 import polinema.ac.id.starterchapter05.fragments.DipsFragment;
 import polinema.ac.id.starterchapter05.fragments.HandstandFragment;
+import polinema.ac.id.starterchapter05.fragments.PushUpFragment;
 import polinema.ac.id.starterchapter05.fragments.PushupsFragment;
-import polinema.ac.id.starterchapter05.fragments.RedFragment;
 
 public class PraktikumActivity extends AppCompatActivity {
 
@@ -20,12 +19,19 @@ public class PraktikumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_praktikum);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .add(R.id.praktikum_fragment_placeholder, new PushUpFragment())
+                    .commit();
+        }
     }
 
     public void handlerPushups(View view) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new PushupsFragment());
+        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new PushUpFragment());
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

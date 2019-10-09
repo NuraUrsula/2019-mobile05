@@ -14,10 +14,10 @@ import polinema.ac.id.starterchapter05.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PusUpFragment extends Fragment {
+public class PushUpFragment extends Fragment {
 
 
-    public PusUpFragment() {
+    public PushUpFragment() {
         // Required empty public constructor
     }
 
