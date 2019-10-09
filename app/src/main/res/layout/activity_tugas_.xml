@@ -70,15 +70,14 @@
             android:layout_width="183dp"
             android:layout_height="99dp"
             android:layout_marginStart="10dp"
+            android:onClick="handlerClickDips"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.456"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline6"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/dips"
-            android:onClick="handlerClickDips"
-            />
+            app:srcCompat="@drawable/dips_ex" />
 
         <ImageView
             android:id="@+id/Pushup"

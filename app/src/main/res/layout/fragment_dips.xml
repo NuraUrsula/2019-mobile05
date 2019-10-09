@@ -221,21 +221,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/usera_orange" />
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/comment" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/usera_orange" />
 </FrameLayout>

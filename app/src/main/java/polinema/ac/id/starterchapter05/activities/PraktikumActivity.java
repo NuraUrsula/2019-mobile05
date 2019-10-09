@@ -19,46 +19,46 @@ public class PraktikumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_praktikum);
+        setContentView(R.layout.activity_tugas_);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                    .add(R.id.praktikum_fragment_placeholder, new PushUpFragment())
+                    .add(R.id.frameLayout, new PushUpFragment())
                     .commit();
         }
     }
 
-    public void handlerPushups(View view) {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
+    public void handlerClikPushup(View view) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frameLayout);
 
         if (fragment == null || fragment instanceof DipsFragment || fragment instanceof HandStandFragment) {
             getSupportFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                    .replace(R.id.praktikum_fragment_placeholder, new PushUpFragment())
+                    .replace(R.id.frameLayout, new PushUpFragment())
                     .commit();
         }
     }
 
-    public void handlerDips(View view) {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
+    public void handlerClickDips(View view) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frameLayout);
 
         if (fragment == null || fragment instanceof PushUpFragment || fragment instanceof HandStandFragment) {
             getSupportFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                    .replace(R.id.praktikum_fragment_placeholder, new DipsFragment())
+                    .replace(R.id.frameLayout, new DipsFragment())
                     .commit();
         }
     }
 
 
-    public void handlerHandstand(View view) {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
+    public void handlerClickHandstand(View view) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frameLayout);
 
         if (fragment == null || fragment instanceof PushUpFragment || fragment instanceof DipsFragment) {
             getSupportFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                    .replace(R.id.praktikum_fragment_placeholder, new HandStandFragment())
+                    .replace(R.id.frameLayout, new HandStandFragment())
                     .commit();
         }
     }

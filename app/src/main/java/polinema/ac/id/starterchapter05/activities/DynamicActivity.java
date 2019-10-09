@@ -1,9 +1,10 @@
 package polinema.ac.id.starterchapter05.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import polinema.ac.id.starterchapter05.R;
 import polinema.ac.id.starterchapter05.fragments.BlueFragment;
@@ -23,7 +24,7 @@ public class DynamicActivity extends AppCompatActivity {
         if(fragment == null || fragment instanceof BlueFragment) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-            fragmentTransaction.replace(R.id.praktikum_fragment_placeholder, new RedFragment(), "RED_FRAGMENT");
+            fragmentTransaction.replace(R.id.txt_red_fragment, new RedFragment(), "RED_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
@@ -33,7 +34,7 @@ public class DynamicActivity extends AppCompatActivity {
         if(fragment == null || fragment instanceof BlueFragment) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-            fragmentTransaction.replace(R.id.praktikum_fragment_placeholder, new BlueFragment(), "BLUE_FRAGMENT");
+            fragmentTransaction.replace(R.id.txt_blue_fragment, new BlueFragment(), "BLUE_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
