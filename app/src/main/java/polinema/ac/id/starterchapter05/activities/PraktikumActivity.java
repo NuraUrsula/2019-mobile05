@@ -1,15 +1,16 @@
 package polinema.ac.id.starterchapter05.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import polinema.ac.id.starterchapter05.R;
 import polinema.ac.id.starterchapter05.fragments.DipsFragment;
-import polinema.ac.id.starterchapter05.fragments.HandstandFragment;
+import polinema.ac.id.starterchapter05.fragments.HandStandFragment;
 import polinema.ac.id.starterchapter05.fragments.PushUpFragment;
-import polinema.ac.id.starterchapter05.fragments.PushupsFragment;
 
 public class PraktikumActivity extends AppCompatActivity {
 
@@ -29,11 +30,19 @@ public class PraktikumActivity extends AppCompatActivity {
     }
 
     public void handlerPushups(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new PushUpFragment());
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
+//        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new PushUpFragment());
+//        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.commit();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.praktikum_fragment_placeholder);
+
+        if (fragment == null || fragment instanceof DipsFragment || fragment instanceof HandStandFragment) {
+            getSupportFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .replace(R.id.praktikum_fragment_placeholder, new PushUpFragment())
+                    .commit();
+        }
     }
 
     public void handlerDips(View view) {
@@ -48,7 +57,7 @@ public class PraktikumActivity extends AppCompatActivity {
     public void handlerHandstand(View view) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_left);
-        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new HandstandFragment());
+        fragmentTransaction.replace(R.id.praktikum_fragment_placeholder,new HandStandFragment());
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
